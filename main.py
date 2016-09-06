@@ -41,12 +41,12 @@ if __name__ == '__main__':
     config.add_route("hello", "/")
     config.scan()
 
-    print "==="
-    print config.get_settings()["jinja2.directories"]
-    print "==="
+    print("===")
+    print(config.get_settings()["jinja2.directories"])
+    print("===")
 
     # serve app
     app = config.make_wsgi_app()
-    print "localhost:4567"
+    print("localhost:4567")
     server = make_server('0.0.0.0', 4567, app)
     server.serve_forever()
